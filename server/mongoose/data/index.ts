@@ -1,0 +1,1 @@
+export const {dogData} = require('./dog.data.json');
