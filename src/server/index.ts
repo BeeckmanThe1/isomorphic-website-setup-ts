@@ -1,8 +1,8 @@
 import express from 'express';
-import {initializeRouting} from "./routes/routes.init";
 import {initApp} from "./app";
+import {router} from "./routes";
 
 const app = express()
 
-initializeRouting(app)
+app.use(router);
 initApp(app).then(() => console.log('Application running successfully'));
