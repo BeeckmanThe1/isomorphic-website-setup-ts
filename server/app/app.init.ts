@@ -15,6 +15,7 @@ export const initApp = async (app: Express) => {
 
         await mongoose.connect(process.env.MONGO_URL || '')
         await seedDb();
+
         httpsServer.listen(port, () => console.log(`[HTTPS server]: Server is running at https://localhost:${port}`))
     } catch (err) {
         console.log('err', err)

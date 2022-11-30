@@ -1,7 +1,7 @@
 import {Express} from 'express';
-import {dogRouter, rootRouter} from "./dogs";
+import {rootRouter, apiRouter} from ".";
 
 export const initializeRouting = (app: Express) => {
     app.use('/', rootRouter)
-    app.use('/dogs', dogRouter)
+    app.use('/api', apiRouter)
 }

@@ -1,5 +1,5 @@
 import express from 'express';
-import {Dog} from "../../mongoose/models";
+import {Dog} from "../../../mongoose/models";
 
 export const router = express.Router();
 
@@ -12,4 +12,3 @@ router.get("/:id", async (req, res) => {
     const dog = await Dog.findById(id);
     return res.status(200).json(dog);
 });
-

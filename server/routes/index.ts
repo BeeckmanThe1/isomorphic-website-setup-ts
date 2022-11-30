@@ -1,2 +1,4 @@
-export * from './dogs'
+export * from './api'
+export * from './root'
+
 export * from './routes.init'
