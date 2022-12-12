@@ -14,7 +14,9 @@
     "build:prod": "webpack --mode=production --node-env=production",
     "build:watch": "webpack --watch",
     "run:server:prod": "nodemon dist/main.js",
-    "run:server:dev": "nodemon dist/main.js"
+    "run:server:dev": "nodemon dist/main.js",
+    "heroku:log": "heroku logs --tail -a isomorphic-website",
+    "heroku:run": "heroku local web"
   },
   "repository": {
     "type": "git",
