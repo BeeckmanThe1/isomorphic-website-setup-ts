@@ -45,7 +45,8 @@ const config = {
   resolve: {
     extensions: [".tsx", ".ts", ".jsx", ".js", "..."],
   },
-  target: "node"
+  target: "node",
+  stats: 'errors-only'
 };
 
 module.exports = () => {

@@ -13,7 +13,7 @@ export const initApp = async (app: Express) => {
         }
         const httpsServer = https.createServer(httpsOptions, app)
 
-        await mongoose.connect(process.env.MONGO_URL || '')
+        await mongoose.connect(process.env.MONGO_URL)
         await seedDb();
 
         httpsServer.listen(port, () => console.log(`[HTTPS server]: Server is running at https://localhost:${port}`))
