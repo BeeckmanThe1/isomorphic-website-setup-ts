@@ -4,7 +4,5 @@ import { router } from './routes';
 
 const app = express()
 
-const test = ['']
-
 app.use(router);
 initApp(app).then(() => console.log('Application running successfully'));

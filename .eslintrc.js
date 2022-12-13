@@ -29,6 +29,7 @@ module.exports = {
         'quotes': [2, 'single', { 'avoidEscape': true }],
         'no-multi-spaces': ['error'],
         'object-curly-spacing': ['error', 'always'],
-        'array-bracket-spacing': ['error', 'never']
+        'array-bracket-spacing': ['error', 'never'],
+        'no-unused-vars': ['error', { 'vars': 'all', 'args': 'after-used', 'ignoreRestSiblings': false }]
     }
 }

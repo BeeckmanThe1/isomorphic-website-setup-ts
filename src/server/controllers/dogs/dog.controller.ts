@@ -1,4 +1,3 @@
-import { Dog } from '../../mongoose';
 import { Request, Response } from 'express';
 import dogService from '../../services/dogs/dog.service';
 
