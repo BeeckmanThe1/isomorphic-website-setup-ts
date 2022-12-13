@@ -16,7 +16,9 @@
     "run:server:prod": "nodemon dist/main.js",
     "run:server:dev": "nodemon dist/main.js",
     "heroku:log": "heroku logs --tail -a isomorphic-website",
-    "heroku:run": "heroku local web"
+    "heroku:run": "heroku local web",
+    "prettier:fix": "prettier",
+    "eslint:fix": "eslint --fix"
   },
   "repository": {
     "type": "git",
@@ -37,8 +39,12 @@
     "@types/express": "^4.17.14",
     "@types/mongodb": "^4.0.7",
     "@types/node": "^18.11.9",
+    "@typescript-eslint/eslint-plugin": "^5.46.1",
+    "@typescript-eslint/parser": "^5.46.1",
     "@webpack-cli/generators": "^3.0.1",
     "css-loader": "^6.7.2",
+    "eslint": "^8.29.0",
+    "eslint-plugin-react": "^7.31.11",
     "mini-css-extract-plugin": "^2.7.2",
     "nodemon": "^2.0.20",
     "prettier": "^2.8.1",
