@@ -9,21 +9,21 @@ export type DogType = {
 const DogSchema = new Schema<DogType>({
     name: {
         type: String,
-        required: true,
+        required: true
     },
     breed: {
         type: String,
-        required: true,
+        required: true
     },
     age: {
         type: Number,
-        required: true,
+        required: true
     },
     isGoodBoy: {
         type: Boolean,
         required: false,
-        default: true,
-    },
+        default: true
+    }
 });
 
 export const Dog = model<DogType>("Dog", DogSchema);

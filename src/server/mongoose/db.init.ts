@@ -1,5 +1,5 @@
 import {Dog} from "./models";
-const dogData = require('./data/dog.data.json');
+import dogData from "./data/dog.data.json";
 
 export const seedDb = async () => {
         const dbIsAlreadySeeded = !!await Dog.count();

@@ -24,5 +24,5 @@ const getDogs = async (req: Request, res: Response) => {
 
 export default {
     getDog,
-    getDogs,
+    getDogs
 }

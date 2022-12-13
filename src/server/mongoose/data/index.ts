@@ -1,1 +1,1 @@
-export const {dogData} = require('./dog.data.json');
+export {default as dogData} from './dog.data.json';

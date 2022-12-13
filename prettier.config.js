@@ -1,5 +1,5 @@
 import prettierConfigStandard from 'prettier-config-standard'
 
-export const modifiedConfig = {
+module.exports = {
     ...prettierConfigStandard
 }
