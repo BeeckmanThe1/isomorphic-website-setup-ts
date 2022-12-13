@@ -1,1 +1,1 @@
-export {default as dogData} from './dog.data.json';
+export { default as dogData } from './dog.data.json';

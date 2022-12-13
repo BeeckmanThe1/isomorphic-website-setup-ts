@@ -1,7 +1,7 @@
 import http from 'http';
 import mongoose from 'mongoose';
-import {Express} from 'express';
-import {seedDb} from '../mongoose';
+import { Express } from 'express';
+import { seedDb } from '../mongoose';
 
 export const initApp = async (app: Express) => {
     try {

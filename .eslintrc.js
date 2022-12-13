@@ -26,6 +26,8 @@ module.exports = {
             'exports': 'never',
             'functions': 'never'
         }],
-        'quotes': [2, 'single', { 'avoidEscape': true }]
+        'quotes': [2, 'single', { 'avoidEscape': true }],
+        'no-multi-spaces': ['error'],
+        'object-curly-spacing': ['error', 'always']
     }
 }
