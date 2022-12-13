@@ -17,12 +17,8 @@
     "run:server:dev": "nodemon dist/main.js",
     "heroku:log": "heroku logs --tail -a isomorphic-website",
     "heroku:run": "heroku local web",
-    "eslint:fix": "eslint src/**/*.{t,j}s{,x} --quiet --fix",
-    "stylelint:fix": "stylelint --fix --config stylelint.config.js **/*.scss",
-    "eslint": "eslint src/**/*.{t,j}s{,x} --quiet",
-    "stylelint": "stylelint --config stylelint.config.js **/*.scss",
-    "lint": "npm run eslint && npm run stylelint",
-    "lint:fix": "npm run eslint:fix && npm run stylelint:fix"
+    "lint": "eslint src/**/*.{t,j}s{,x} --quiet && stylelint --config stylelint.config.js **/*.scss",
+    "lint:fix": "eslint src/**/*.{t,j}s{,x} --quiet --fix && stylelint --fix --config stylelint.config.js **/*.scss"
   },
   "repository": {
     "type": "git",

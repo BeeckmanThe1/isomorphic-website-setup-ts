@@ -18,6 +18,11 @@ module.exports = {
         'react',
         '@typescript-eslint'
     ],
+    'settings': {
+        'react': {
+            'version': 'detect'
+        }
+    },
     'rules': {
         'comma-dangle': ['error', {
             'arrays': 'never',
