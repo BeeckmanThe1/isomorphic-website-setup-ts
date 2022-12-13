@@ -1,7 +1,8 @@
 import express from 'express';
 import {apiRouter} from "../api";
+import {rootController} from "../../controllers";
 
 export const router = express.Router();
 
-router.get('/',(req, res) => res.send('Express + TypeScript Server'));
+router.get('/', rootController.getRoot);
 router.use('/api', apiRouter)
