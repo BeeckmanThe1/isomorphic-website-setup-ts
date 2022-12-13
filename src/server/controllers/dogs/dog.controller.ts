@@ -1,6 +1,6 @@
-import {Dog} from "../../mongoose";
-import {Request, Response} from "express";
-import dogService from "../../services/dogs/dog.service";
+import {Dog} from '../../mongoose';
+import {Request, Response} from 'express';
+import dogService from '../../services/dogs/dog.service';
 
 const getDog = async (req: Request, res: Response) => {
     try {

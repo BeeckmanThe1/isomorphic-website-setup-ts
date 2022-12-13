@@ -1,4 +1,4 @@
-import {Dog} from "../../mongoose";
+import {Dog} from '../../mongoose';
 
 const getAllDogs = async () => {
     try {
