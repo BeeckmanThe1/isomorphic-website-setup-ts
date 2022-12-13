@@ -28,6 +28,7 @@ module.exports = {
         }],
         'quotes': [2, 'single', { 'avoidEscape': true }],
         'no-multi-spaces': ['error'],
-        'object-curly-spacing': ['error', 'always']
+        'object-curly-spacing': ['error', 'always'],
+        'array-bracket-spacing': ['error', 'never']
     }
 }
