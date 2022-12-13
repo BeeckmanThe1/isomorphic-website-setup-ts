@@ -18,6 +18,11 @@ module.exports = {
         'react',
         '@typescript-eslint'
     ],
+    'settings': {
+        'react': {
+            'version': 'detect'
+        }
+    },
     'rules': {
         'comma-dangle': ['error', {
             'arrays': 'never',
@@ -30,6 +35,7 @@ module.exports = {
         'no-multi-spaces': ['error'],
         'object-curly-spacing': ['error', 'always'],
         'array-bracket-spacing': ['error', 'never'],
-        'no-unused-vars': ['error', { 'vars': 'all', 'args': 'after-used', 'ignoreRestSiblings': false }]
+        'no-unused-vars': ['error', { 'vars': 'all', 'args': 'after-used', 'ignoreRestSiblings': false }],
+        '@typescript-eslint/no-explicit-any': 'error'
     }
 }

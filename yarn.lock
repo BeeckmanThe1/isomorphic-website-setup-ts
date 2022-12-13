@@ -1269,7 +1269,7 @@
 
 "@typescript-eslint/eslint-plugin@^5.46.1":
   version "5.46.1"
-  resolved "https://nexus.tools.mediagenix.io/repository/npm/@typescript-eslint/eslint-plugin/-/eslint-plugin-5.46.1.tgz"
+  resolved "https://nexus.tools.mediagenix.io/repository/npm/@typescript-eslint/eslint-plugin/-/eslint-plugin-5.46.1.tgz#098abb4c9354e19f460d57ab18bff1f676a6cff0"
   integrity sha512-YpzNv3aayRBwjs4J3oz65eVLXc9xx0PDbIRisHj+dYhvBn02MjYOD96P8YGiWEIFBrojaUjxvkaUpakD82phsA==
   dependencies:
     "@typescript-eslint/scope-manager" "5.46.1"
@@ -1284,7 +1284,7 @@
 
 "@typescript-eslint/parser@^5.46.1":
   version "5.46.1"
-  resolved "https://nexus.tools.mediagenix.io/repository/npm/@typescript-eslint/parser/-/parser-5.46.1.tgz"
+  resolved "https://nexus.tools.mediagenix.io/repository/npm/@typescript-eslint/parser/-/parser-5.46.1.tgz#1fc8e7102c1141eb64276c3b89d70da8c0ba5699"
   integrity sha512-RelQ5cGypPh4ySAtfIMBzBGyrNerQcmfA1oJvPj5f+H4jI59rl9xxpn4bonC0tQvUKOEN7eGBFWxFLK3Xepneg==
   dependencies:
     "@typescript-eslint/scope-manager" "5.46.1"
@@ -2503,7 +2503,7 @@ escape-string-regexp@^4.0.0:
 
 eslint-plugin-react@^7.31.11:
   version "7.31.11"
-  resolved "https://nexus.tools.mediagenix.io/repository/npm/eslint-plugin-react/-/eslint-plugin-react-7.31.11.tgz"
+  resolved "https://nexus.tools.mediagenix.io/repository/npm/eslint-plugin-react/-/eslint-plugin-react-7.31.11.tgz#011521d2b16dcf95795df688a4770b4eaab364c8"
   integrity sha512-TTvq5JsT5v56wPa9OYHzsrOlHzKZKjV+aLgS+55NJP/cuzdiQPC7PfYoUjMoxlffKtvijpk7vA/jmuqRb9nohw==
   dependencies:
     array-includes "^3.1.6"
@@ -2557,7 +2557,7 @@ eslint-visitor-keys@^3.3.0:
 
 eslint@^8.29.0:
   version "8.29.0"
-  resolved "https://nexus.tools.mediagenix.io/repository/npm/eslint/-/eslint-8.29.0.tgz"
+  resolved "https://nexus.tools.mediagenix.io/repository/npm/eslint/-/eslint-8.29.0.tgz#d74a88a20fb44d59c51851625bc4ee8d0ec43f87"
   integrity sha512-isQ4EEiyUjZFbEKvEGJKKGBwXtvXX+zJbkVKCgTuB9t/+jUBcy8avhkEwWJecI15BkRkOYmvIM5ynbhRjEkoeg==
   dependencies:
     "@eslint/eslintrc" "^1.3.3"
@@ -5742,7 +5742,7 @@ type-is@~1.6.18:
 
 typescript@^4.9.4:
   version "4.9.4"
-  resolved "https://nexus.tools.mediagenix.io/repository/npm/typescript/-/typescript-4.9.4.tgz"
+  resolved "https://nexus.tools.mediagenix.io/repository/npm/typescript/-/typescript-4.9.4.tgz#a2a3d2756c079abda241d75f149df9d561091e78"
   integrity sha512-Uz+dTXYzxXXbsFpM86Wh3dKCxrQqUcVMxwU54orwlJjOpO3ao8L7j5lH+dWfTwgCwIuM9GQ2kvVotzYJMXTBZg==
 
 unbox-primitive@^1.0.2:
