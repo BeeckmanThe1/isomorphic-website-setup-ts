@@ -20,5 +20,12 @@ module.exports = {
         "@typescript-eslint"
     ],
     "rules": {
+        "comma-dangle": ["error", {
+            "arrays": "never",
+            "objects": "never",
+            "imports": "never",
+            "exports": "never",
+            "functions": "never"
+        }]
     }
 }
