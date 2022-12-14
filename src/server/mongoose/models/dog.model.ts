@@ -1,4 +1,4 @@
-import {Schema, model} from "mongoose"
+import { Schema, model } from 'mongoose'
 
 export type DogType = {
     name: string,
@@ -9,21 +9,21 @@ export type DogType = {
 const DogSchema = new Schema<DogType>({
     name: {
         type: String,
-        required: true,
+        required: true
     },
     breed: {
         type: String,
-        required: true,
+        required: true
     },
     age: {
         type: Number,
-        required: true,
+        required: true
     },
     isGoodBoy: {
         type: Boolean,
         required: false,
-        default: true,
-    },
+        default: true
+    }
 });
 
-export const Dog = model<DogType>("Dog", DogSchema);
+export const Dog = model<DogType>('Dog', DogSchema);

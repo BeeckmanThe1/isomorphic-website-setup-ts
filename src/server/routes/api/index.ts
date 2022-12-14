@@ -1,1 +1,1 @@
-export {router as apiRouter} from './api.router';
+export { router as apiRouter } from './api.router';
