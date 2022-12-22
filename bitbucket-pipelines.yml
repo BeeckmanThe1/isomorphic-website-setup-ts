@@ -10,9 +10,13 @@ pipelines:
           - yarn
     - parallel:
         - step:
-            name: lint
+            name: eslint
             script:
-              - npm run lint
+              - npm run eslint
+        - step:
+            name: stylelint
+            script:
+              - npm run stylelint
         - step:
             name: typecheck
             script:
