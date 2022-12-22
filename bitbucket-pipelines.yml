@@ -7,7 +7,7 @@ pipelines:
         caches:
           - node
         script:
-          - yarn
+          - npm ci
     - parallel:
         - step:
             name: eslint
