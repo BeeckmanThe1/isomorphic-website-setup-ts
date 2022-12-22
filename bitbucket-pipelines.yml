@@ -17,10 +17,14 @@ pipelines:
               - npm run eslint
         - step:
             name: stylelint
+            caches:
+              - node
             script:
               - npm run stylelint
         - step:
             name: typecheck
+            caches:
+              - node
             script:
               - npm run typecheck
   #branches:
