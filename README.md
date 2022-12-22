@@ -24,11 +24,3 @@
 6. Test controllers & services
 7. Replace webpack by turbopack
 8. Replace tsc by swc
-9. Pipeline
-   - installing dependencies
-   - testing
-   - linting
-   - typecheck
-   - building
-   - version++ by conventional commits + update CHANGELOG.md
-   - running
