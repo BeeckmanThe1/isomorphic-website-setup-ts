@@ -11,6 +11,8 @@ pipelines:
     - parallel:
         - step:
             name: eslint
+            caches:
+              - node
             script:
               - npm run eslint
         - step:
