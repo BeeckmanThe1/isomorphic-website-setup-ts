@@ -1,68 +1,57 @@
 image: node:19.2
 
-pipelines:
-  default:
-    - step:
+definitions:
+  steps:
+    - step: &install-deps
         name: install deps
         caches:
           - node
         script:
           - npm ci
+    - step: &eslint
+        name: eslint
+        caches:
+          - node
+        script:
+          - npm run eslint
+    - step: &stylelint
+        name: stylelint
+        caches:
+          - node
+        script:
+          - npm run stylelint
+    - step: &typecheck
+        name: typecheck
+        caches:
+          - node
+        script:
+          - npm run typecheck
+    - step: &create-artifact
+        name: Create artifact
+        script:
+          - git archive --format=tar.gz main -o application.tar.gz
+        artifacts:
+          - application.tar.gz
+    - step: &deploy-artifact
+        name: Deploy to heroku
+        deployment: production
+        caches:
+          - node
+        script:
+          - pipe: atlassian/heroku-deploy:2.0.0
+            variables:
+              HEROKU_API_KEY: $HEROKU_API_KEY
+              HEROKU_APP_NAME: $HEROKU_APP_NAME
+              ZIP_FILE: "application.tar.gz"
+pipelines:
+  default:
+    - step: *install-deps
     - parallel:
-        - step:
-            name: eslint
-            caches:
-              - node
-            script:
-              - npm run eslint
-        - step:
-            name: stylelint
-            caches:
-              - node
-            script:
-              - npm run stylelint
-        - step:
-            name: typecheck
-            caches:
-              - node
-            script:
-              - npm run typecheck
+        - step: *eslint
+        - step: *stylelint
+        - step: *typecheck
   branches:
     main:
       # we should also bump the version & add documentation from conventional commit messages before publishing/deploying
-      - step:
-          name: Install dependencies
-          caches:
-            - node
-          script:
-            - rm -rf package-lock.json
-            - rm -rf node_modules
-            - npm install
-      - step:
-            name: Create artifact
-            script:
-              - git archive --format=tar.gz main -o application.tar.gz
-            artifacts:
-              - application.tar.gz
-      - step:
-          name: Deploy to heroku
-          deployment: production
-          caches:
-            - node
-          script:
-            - pipe: atlassian/heroku-deploy:2.0.0
-              variables:
-                HEROKU_API_KEY: $HEROKU_API_KEY
-                HEROKU_APP_NAME: $HEROKU_APP_NAME
-                ZIP_FILE: "application.tar.gz"
-                # WAIT: 'true'
-      #- step:
-      #    name: Deploy to Production
-      #    deployment: Production
-      #    script:
-      #      # Bump versions before publishing
-      #      - npm --no-git-tag-version version "1.0.$BITBUCKET_BUILD_NUMBER" -m "Upgrade to new version"
-      #      # Publish package
-      #      - pipe: atlassian/npm-publish:0.3.2
-      #        variables:
-      #          NPM_TOKEN: $NPM_TOKEN
+      - step: *create-artifact
+      - step: *deploy-artifact
