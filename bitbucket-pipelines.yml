@@ -31,6 +31,14 @@ pipelines:
     main:
       # we should also bump the version & add documentation from conventional commit messages before publishing/deploying
       - step:
+          name: Install dependencies
+          caches:
+            - node
+          script:
+            - rm -rf package-lock.json
+            - rm -rf node_modules
+            - npm install
+      - step:
             name: Create artifact
             script:
               - git archive --format=tar.gz main -o application.tar.gz
@@ -47,7 +55,7 @@ pipelines:
                 HEROKU_API_KEY: $HEROKU_API_KEY
                 HEROKU_APP_NAME: $HEROKU_APP_NAME
                 ZIP_FILE: "application.tar.gz"
-                WAIT: 'true'
+                # WAIT: 'true'
       #- step:
       #    name: Deploy to Production
       #    deployment: Production
