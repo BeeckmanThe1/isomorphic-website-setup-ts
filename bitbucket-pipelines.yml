@@ -1,0 +1,60 @@
+image: node:19.2
+
+pipelines:
+  default:
+    - step:
+        name: install deps
+        caches:
+          - node
+        script:
+          - npm ci
+    - parallel:
+        - step:
+            name: eslint
+            caches:
+              - node
+            script:
+              - npm run eslint
+        - step:
+            name: stylelint
+            caches:
+              - node
+            script:
+              - npm run stylelint
+        - step:
+            name: typecheck
+            caches:
+              - node
+            script:
+              - npm run typecheck
+  branches:
+    main:
+      # we should also bump the version & add documentation from conventional commit messages before publishing/deploying
+      - step:
+            name: Create artifact
+            script:
+              - git archive --format=tar.gz master -o application.tar.gz
+            artifacts:
+              - application.tar.gz
+      - step:
+          name: Deploy to heroku
+          deployment: production
+          caches:
+            - node
+          script:
+            - pipe: atlassian/heroku-deploy:1.1.4
+              variables:
+                HEROKU_API_KEY: $HEROKU_API_KEY
+                HEROKU_APP_NAME: $HEROKU_APP_NAME
+                ZIP_FILE: "application.tar.gz"
+                WAIT: 'true'
+      #- step:
+      #    name: Deploy to Production
+      #    deployment: Production
+      #    script:
+      #      # Bump versions before publishing
+      #      - npm --no-git-tag-version version "1.0.$BITBUCKET_BUILD_NUMBER" -m "Upgrade to new version"
+      #      # Publish package
+      #      - pipe: atlassian/npm-publish:0.3.2
+      #        variables:
+      #          NPM_TOKEN: $NPM_TOKEN
