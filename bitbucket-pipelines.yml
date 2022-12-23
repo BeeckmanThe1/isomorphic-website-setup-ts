@@ -43,6 +43,10 @@ definitions:
               HEROKU_API_KEY: $HEROKU_API_KEY
               HEROKU_APP_NAME: $HEROKU_APP_NAME
               ZIP_FILE: "application.tar.gz"
+    - step: &bump-and-document
+        name: Bump version & document
+        script:
+          - npm run release
 pipelines:
   default:
     - step: *install-deps

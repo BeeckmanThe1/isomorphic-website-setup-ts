@@ -21,7 +21,8 @@
     "eslint": "eslint src/**/*.{t,j}s{,x} --quiet",
     "stylelint": "stylelint --config stylelint.config.js **/*.scss",
     "lint": "eslint src/**/*.{t,j}s{,x} --quiet && stylelint --config stylelint.config.js **/*.scss",
-    "lint:fix": "eslint src/**/*.{t,j}s{,x} --quiet --fix && stylelint --fix --config stylelint.config.js **/*.scss"
+    "lint:fix": "eslint src/**/*.{t,j}s{,x} --quiet --fix && stylelint --fix --config stylelint.config.js **/*.scss",
+    "release": "standard-version"
   },
   "repository": {
     "type": "git",
