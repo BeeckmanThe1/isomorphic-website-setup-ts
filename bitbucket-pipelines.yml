@@ -48,6 +48,7 @@ definitions:
         caches:
           - node
         script:
+          - npm i @semantic-release/changelog
           - npm run release
 pipelines:
   default:
