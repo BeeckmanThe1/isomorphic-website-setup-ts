@@ -3,11 +3,6 @@
   "version": "0.0.0-development",
   "description": "My webpack project",
   "main": "src/server/index.ts",
-  "release": {
-    "branches": [
-      "main"
-    ]
-  },
   "engines": {
     "node": "19.2.0",
     "npm": "8.19.3"
