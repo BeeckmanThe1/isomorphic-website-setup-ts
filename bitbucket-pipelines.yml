@@ -57,7 +57,7 @@ definitions:
           - yarn run release
 pipelines:
   default:
-    - step: *install-deps-semantic-release
+    - step: *install-deps
     - parallel:
         - step: *eslint
         - step: *stylelint
@@ -65,7 +65,7 @@ pipelines:
   branches:
     main:
       # we should also bump the version & add documentation from conventional commit messages before publishing/deploying
-      - step: *install-deps
+      - step: *install-deps-semantic-release
       - step: *create-artifact
       - step: *bump-document-release
       - step: *deploy-artifact
