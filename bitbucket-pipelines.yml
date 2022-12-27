@@ -8,12 +8,6 @@ definitions:
           - node
         script:
           - yarn --frozen-lockfile
-    - step: &install-deps-semantic-release
-        name: install semantic release
-        caches:
-          - node
-        script:
-          - yarn add semantic-release
     - step: &eslint
         name: eslint
         caches:
