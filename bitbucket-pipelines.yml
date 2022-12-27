@@ -58,7 +58,6 @@ pipelines:
         - step: *typecheck
   branches:
     main:
-      - step: *install-deps
       - step: *bump-document-release
       - step: *create-artifact
       - step: *deploy-artifact
