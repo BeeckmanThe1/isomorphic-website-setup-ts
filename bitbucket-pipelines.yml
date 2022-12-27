@@ -48,7 +48,7 @@ definitions:
         caches:
           - node
         script:
-          - npm run semantic-release
+          - npm run release
 pipelines:
   default:
     - step: *install-deps
