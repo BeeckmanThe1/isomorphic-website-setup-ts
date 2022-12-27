@@ -7,25 +7,25 @@ definitions:
         caches:
           - node
         script:
-          - npm ci
+          - yarn --production=false --frozen-lockfile
     - step: &eslint
         name: eslint
         caches:
           - node
         script:
-          - npm run eslint
+          - yarn run eslint
     - step: &stylelint
         name: stylelint
         caches:
           - node
         script:
-          - npm run stylelint
+          - yarn run stylelint
     - step: &typecheck
         name: typecheck
         caches:
           - node
         script:
-          - npm run typecheck
+          - yarn run typecheck
     - step: &create-artifact
         name: Create artifact
         script:
@@ -48,7 +48,7 @@ definitions:
         caches:
           - node
         script:
-          - npm run semantic-release
+          - yarn run semantic-release
 pipelines:
   default:
     - step: *install-deps
