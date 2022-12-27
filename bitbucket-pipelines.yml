@@ -65,7 +65,7 @@ pipelines:
   branches:
     main:
       # we should also bump the version & add documentation from conventional commit messages before publishing/deploying
-      - step: *install-deps-semantic-release
+      - step: *install-deps
       - step: *create-artifact
       - step: *bump-document-release
       - step: *deploy-artifact
