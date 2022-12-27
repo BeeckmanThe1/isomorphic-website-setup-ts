@@ -7,7 +7,7 @@ definitions:
         caches:
           - node
         script:
-          - yarn --frozen-lockfile
+          - yarn --production=false --frozen-lockfile
     - step: &eslint
         name: eslint
         caches:
