@@ -43,10 +43,10 @@ definitions:
               HEROKU_API_KEY: $HEROKU_API_KEY
               HEROKU_APP_NAME: $HEROKU_APP_NAME
               ZIP_FILE: "application.tar.gz"
-    - step: &bump-and-document
-        name: Bump version & document
+    - step: &bump-document-release
+        name: Bump version, document and publish
         script:
-          - yarn run release
+          - yarn run semantic-release
 pipelines:
   default:
     - step: *install-deps
@@ -58,4 +58,5 @@ pipelines:
     main:
       # we should also bump the version & add documentation from conventional commit messages before publishing/deploying
       - step: *create-artifact
+      - step: *bump-document-release
       - step: *deploy-artifact
