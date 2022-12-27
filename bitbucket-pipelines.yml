@@ -8,6 +8,12 @@ definitions:
           - node
         script:
           - yarn install --frozen-lockfile
+    - step: &install-deps-semantic-release
+        name: install semantic release
+        caches:
+          - node
+        script:
+          - yarn add semantic-release
     - step: &eslint
         name: eslint
         caches:
@@ -51,7 +57,7 @@ definitions:
           - yarn run release
 pipelines:
   default:
-    - step: *install-deps
+    - step: *install-deps-semantic-release
     - parallel:
         - step: *eslint
         - step: *stylelint
@@ -59,6 +65,8 @@ pipelines:
   branches:
     main:
       # we should also bump the version & add documentation from conventional commit messages before publishing/deploying
+      - step: *install-deps
+      - step: *create-artifact
       - step: *create-artifact
       - step: *bump-document-release
       - step: *deploy-artifact
