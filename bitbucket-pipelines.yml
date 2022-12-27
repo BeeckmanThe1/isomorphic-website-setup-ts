@@ -45,6 +45,8 @@ definitions:
               ZIP_FILE: "application.tar.gz"
     - step: &bump-document-release
         name: Bump version, document and publish
+        caches:
+          - node
         script:
           - yarn run semantic-release
 pipelines:
