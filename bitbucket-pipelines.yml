@@ -7,7 +7,7 @@ definitions:
         caches:
           - node
         script:
-          - yarn install --frozen-lockfile
+          - yarn --frozen-lockfile
     - step: &install-deps-semantic-release
         name: install semantic release
         caches:
