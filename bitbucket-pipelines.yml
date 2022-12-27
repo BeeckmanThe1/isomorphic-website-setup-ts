@@ -48,7 +48,7 @@ definitions:
         caches:
           - node
         script:
-          - yarn run release
+          - yarn run semantic-release
 pipelines:
   default:
     - step: *install-deps
